@@ -1,7 +1,6 @@
 import React from 'react'
 
 const SelectTag = (name, options) => {
-    console.log(options)
   return (
     <select name={name}>
         {

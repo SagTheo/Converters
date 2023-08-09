@@ -1,17 +1,23 @@
-import { useState } from 'react';
 import './App.css'
-import SelectTag from './components/SelectTag';
+import ConverterType from './components/ConverterType';
 
 function App() {
-  const [test, setTest] = useState([
-    { 'value' : 'value1', 'text' : 'text1' },
-    { 'value' : 'value2', 'text' : 'text2' },
-    { 'value' : 'value3', 'text' : 'text3' }
-  ])
+  const converterTypes = [
+    { key: '1', title: 'Currency'},
+    { key: '2', title: 'Weight'},
+    { key: '3', title: 'Distance'}
+  ]
 
   return (
     <div className="App">
-      <SelectTag name={'test'} options={test} />
+      {
+        converterTypes.map(type => {
+          return (
+            <button key={type.key}>{type.title}</button>
+            // <ConverterType key={type.key} title={type.title} />
+          )
+        })
+      }
     </div>
   );
 }
