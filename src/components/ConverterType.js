@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ConverterType = (key, title) => {
+const ConverterType = ({title}) => {
   return (
-    <button key={key}>{title}</button>
+    <button>{title}</button>
   )
 }
 

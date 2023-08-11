@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SelectTag = (name, options) => {
+const SelectTag = ({name, options}) => {
   return (
     <select name={name}>
         {

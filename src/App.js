@@ -13,8 +13,7 @@ function App() {
       {
         converterTypes.map(type => {
           return (
-            <button key={type.key}>{type.title}</button>
-            // <ConverterType key={type.key} title={type.title} />
+            <ConverterType key={type.key} title={type.title} />
           )
         })
       }
