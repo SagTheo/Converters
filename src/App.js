@@ -1,22 +1,22 @@
+import { useState } from 'react';
 import './App.css'
 import ConverterType from './components/ConverterType';
+import { converterTypes } from './content/converterTypes';
 
 function App() {
-  const converterTypes = [
-    { key: '1', title: 'Currency'},
-    { key: '2', title: 'Weight'},
-    { key: '3', title: 'Distance'}
-  ]
+  const [currConv, setCurrConv] = useState('Currency')
 
   return (
     <div className="App">
       {
         converterTypes.map(type => {
           return (
-            <ConverterType key={type.key} title={type.title} />
+            <ConverterType key={type.key} title={type.title} changeConverter={setCurrConv} />
           )
         })
       }
+
+      <div>{currConv}</div>
     </div>
   );
 }
