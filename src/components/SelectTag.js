@@ -1,16 +1,27 @@
 import React from 'react'
 
-const SelectTag = ({name, options}) => {
+const SelectTag = ({from, to}) => {
   return (
-    <select name={name}>
+    <div>
+      <select>
+          {
+              from.map(option => {
+                  return (
+                      <option value={option.value}>{option.text}</option>
+                  )
+              }) 
+          }
+      </select>
+      <select>
         {
-            options.map(option => {
+            to.map(option => {
                 return (
                     <option value={option.value}>{option.text}</option>
                 )
             }) 
         }
-    </select>
+      </select>  
+    </div>
   )
 }
 
