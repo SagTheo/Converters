@@ -13,13 +13,13 @@ const SelectTag = ({from, to}) => {
           }
       </select>
       <select>
-        {
-            to.map(option => {
-                return (
-                    <option value={option.value}>{option.text}</option>
-                )
-            }) 
-        }
+          {
+              to.map(option => {
+                  return (
+                      <option value={option.value}>{option.text}</option>
+                  )
+              }) 
+          }
       </select>  
     </div>
   )

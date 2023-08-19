@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css'
 import ConverterType from './components/ConverterType';
 import SelectTag from './components/SelectTag';
@@ -8,20 +8,36 @@ import { weight } from './content/weight';
 import { distance } from './content/distance';
 
 function App() {
+  const [currTitle, setCurrTitle] = useState('currency')
   const [currConv, setCurrConv] = useState(currency)
+
+  useEffect(() => {
+    switch (currTitle) {
+      case 'currency':
+        setCurrConv(currency)
+        break
+      case 'weight':
+        setCurrConv(weight)
+        break
+      case 'distance':
+        setCurrConv(distance)
+        break
+      default:
+        setCurrConv(currency)
+    }
+  }, [currTitle])
 
   return (
     <div className="App">
       {
         converterTypes.map(type => {
           return (
-            <ConverterType key={type.key} title={type.title} changeConverter={setCurrConv} />
+            <ConverterType key={type.key} title={type.title} changeConverter={setCurrTitle} />
           )
         })
       }
 
       <div>
-        {/* Use useEffect to dynamically change which file from and to data are imported from? */}
         <SelectTag from={currConv.valueAndText.from} to={currConv.valueAndText.to} />
       </div>
     </div>
