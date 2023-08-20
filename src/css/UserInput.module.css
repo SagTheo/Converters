@@ -1,0 +1,13 @@
+.userInputContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.userInput, .result {
+    width: 150px;
+    height: 80px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 5px;
+}

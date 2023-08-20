@@ -6,6 +6,7 @@ import { converterTypes } from './content/converterTypes';
 import { currency } from './content/currency';
 import { weight } from './content/weight';
 import { distance } from './content/distance';
+import UserInput from './components/UserInput';
 
 function App() {
   const [currTitle, setCurrTitle] = useState('currency')
@@ -39,6 +40,7 @@ function App() {
 
       <div>
         <SelectTag from={currConv.valueAndText.from} to={currConv.valueAndText.to} />
+        <UserInput />
       </div>
     </div>
   );
