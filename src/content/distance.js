@@ -21,5 +21,10 @@ export const distance = {
                 text : 'Kilometers'
             }
         ]
+    },
+
+    rates : {
+        km_mi : 0.62,
+        mi_km : 1.61
     }
 }

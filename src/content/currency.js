@@ -21,5 +21,10 @@ export const currency = {
                 text : 'Euros'
             }
         ]
+    },
+
+    rates : {
+        eur_doll : 1.09,
+        doll_eur : 0.92
     }
 }
