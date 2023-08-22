@@ -1,28 +1,33 @@
 import React from 'react'
 
 const SelectTag = ({from, to}) => {
-  return (
-    <div>
-      <select>
-          {
-              from.map(option => {
-                  return (
-                      <option value={option.value}>{option.text}</option>
-                  )
-              }) 
-          }
-      </select>
-      <select>
-          {
-              to.map(option => {
-                  return (
-                      <option value={option.value}>{option.text}</option>
-                  )
-              }) 
-          }
-      </select>  
-    </div>
-  )
+    const test = el => {
+        // on the right way
+        console.log(el.target[0].value)
+    }
+
+    return (
+        <div>
+        <select onChange={(e) => test(e)}>
+            {
+                from.map(option => {
+                    return (
+                        <option value={option.value}>{option.text}</option>
+                    )
+                }) 
+            }
+        </select>
+        <select onChange={(e) => test(e)}>
+            {
+                to.map(option => {
+                    return (
+                        <option value={option.value}>{option.text}</option>
+                    )
+                }) 
+            }
+        </select>  
+        </div>
+    )
 }
 
 export default SelectTag
