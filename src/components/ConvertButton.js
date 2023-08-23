@@ -1,12 +1,12 @@
 import React from 'react'
 
 const ConvertButton = ({ fromTitle, toTitle, currConv }) => {
-  // const formatConversion = `${selectFrom.value}_${selectTo.value}`
+  const formattedConversion = `${fromTitle}_${toTitle}`
 
   return (
     <button onClick={() => {
-      // console.log(formatConversion)
-      //   console.log(currConv.rates[formatConversion])
+      console.log(formattedConversion)
+      console.log(currConv.rates[formattedConversion])
     }}>
         Convert
     </button>

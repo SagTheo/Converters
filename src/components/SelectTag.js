@@ -1,14 +1,9 @@
 import React from 'react'
 
-const SelectTag = ({from, to}) => {
-    const test = el => {
-        // on the right way
-        console.log(el.target[0].value)
-    }
-
+const SelectTag = ({from, to, fromSelectedValue, toSelectedValue}) => {
     return (
         <div>
-        <select onChange={(e) => test(e)}>
+        <select onChange={(e) => fromSelectedValue(e.target[e.target.selectedIndex].value)}>
             {
                 from.map(option => {
                     return (
@@ -17,7 +12,7 @@ const SelectTag = ({from, to}) => {
                 }) 
             }
         </select>
-        <select onChange={(e) => test(e)}>
+        <select onChange={(e) => toSelectedValue(e.target[e.target.selectedIndex].value)}>
             {
                 to.map(option => {
                     return (

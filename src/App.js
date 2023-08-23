@@ -50,7 +50,16 @@ function App() {
       }
 
       <div>
-        <SelectTag from={currConv.valueAndText.from} to={currConv.valueAndText.to} />
+        {/* Issue:
+            when selecting an option in the select tag, the selected index is not reset 
+            when changing the converter, creating a conflict with fromTitle and toTitle values
+            (they don't necessarily correspond to the option selected in the select tag)
+        */}
+        <SelectTag from={currConv.valueAndText.from} 
+                   to={currConv.valueAndText.to}
+                   fromSelectedValue={setFromTitle}
+                   toSelectedValue={setToTitle} 
+        />
         <UserInput />
         <ConvertButton fromTitle={fromTitle} toTitle={toTitle} currConv={currConv} />
       </div>
