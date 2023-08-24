@@ -8,6 +8,7 @@ import { weight } from './content/weight';
 import { distance } from './content/distance';
 import UserInput from './components/UserInput';
 import ConvertButton from './components/ConvertButton';
+import CustomSelectTag from './components/CustomSelectTag';
 
 function App() {
   const [currTitle, setCurrTitle] = useState('currency')
@@ -50,11 +51,6 @@ function App() {
       }
 
       <div>
-        {/* Issue:
-            when selecting an option in the select tag, the selected index is not reset 
-            when changing the converter, creating a conflict with fromTitle and toTitle values
-            (they don't necessarily correspond to the option selected in the select tag)
-        */}
         <SelectTag from={currConv.valueAndText.from} 
                    to={currConv.valueAndText.to}
                    fromSelectedValue={setFromTitle}
@@ -63,6 +59,8 @@ function App() {
         <UserInput />
         <ConvertButton fromTitle={fromTitle} toTitle={toTitle} currConv={currConv} />
       </div>
+
+      <CustomSelectTag options={currConv.valueAndText.from} />
     </div>
   );
 }
