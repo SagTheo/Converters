@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.ul {
+    width: fit-content;
+    height: 19.2px;
+    margin-block: 0.2rem;
+}
+
+.show {
+    overflow: visible;
+}
+
+.hide {
+    overflow: hidden;
+}
+
+.arrow {
+    cursor: pointer;
+}
