@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../css/CustomSelectTag.module.css'
 
-const CustomSelectTag = ({ options }) => {
+const CustomSelectTag = ({ options, selectedValue }) => {
   const [displayOptions, setDisplayOptions] = useState(false)
 
   return (
@@ -10,7 +10,7 @@ const CustomSelectTag = ({ options }) => {
           {
               options.map(option => {
                   return (
-                      <li className={styles.li} onClick={() => console.log(option.value)}>{option.text}</li>
+                      <li className={styles.li} onClick={() => selectedValue(option.value)}>{option.text}</li>
                   )
               })
           }

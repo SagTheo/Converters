@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css'
 import ConverterType from './components/ConverterType';
-import SelectTag from './components/SelectTag';
 import { converterTypes } from './content/converterTypes';
 import { currency } from './content/currency';
 import { weight } from './content/weight';
@@ -51,16 +50,13 @@ function App() {
       }
 
       <div>
-        <SelectTag from={currConv.valueAndText.from} 
-                   to={currConv.valueAndText.to}
-                   fromSelectedValue={setFromTitle}
-                   toSelectedValue={setToTitle} 
-        />
+        <div className='customSelectTags'>
+          <CustomSelectTag options={currConv.valueAndText.from} selectedValue={setFromTitle} />
+          <CustomSelectTag options={currConv.valueAndText.to} selectedValue={setToTitle} />  
+        </div>
         <UserInput />
         <ConvertButton fromTitle={fromTitle} toTitle={toTitle} currConv={currConv} />
       </div>
-
-      <CustomSelectTag options={currConv.valueAndText.from} />
     </div>
   );
 }
