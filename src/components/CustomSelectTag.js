@@ -3,10 +3,25 @@ import styles from '../css/CustomSelectTag.module.css'
 
 const CustomSelectTag = ({ options, selectedValue }) => {
   const [displayOptions, setDisplayOptions] = useState(false)
+  const [defaultOption, setDefaultOption] = useState(options[0].text)
+
+  console.log(options)
 
   return (
     <div className={styles.container}>
-      <ul className={`${displayOptions ? styles.show : styles.hide} ${styles.ul}`}>
+      <div className={`${styles.options} ${displayOptions ? styles.show : styles.hide}`}>
+        <span>{defaultOption}</span>
+
+        {
+          options.map(option => {
+            return (
+              <span onClick={() => setDefaultOption(option.text)}>{option.text}</span>
+            )
+          })
+        }  
+      </div>
+      
+      {/* <ul className={`${displayOptions ? styles.show : styles.hide} ${styles.ul}`}>
           {
               options.map(option => {
                   return (
@@ -14,7 +29,7 @@ const CustomSelectTag = ({ options, selectedValue }) => {
                   )
               })
           }
-      </ul>
+      </ul> */}
       <svg xmlns="http://www.w3.org/2000/svg" 
            width="16" 
            height="16" 
