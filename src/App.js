@@ -14,6 +14,8 @@ function App() {
   const [currConv, setCurrConv] = useState(currency)
   const [fromTitle, setFromTitle] = useState()
   const [toTitle, setToTitle] = useState()
+  const [fromDefaultOption, setFromDefaultOption] = useState()
+  const [toDefaultOption, setToDefaultOption] = useState()
 
   useEffect(() => {
     switch (currTitle) {
@@ -21,21 +23,29 @@ function App() {
         setCurrConv(currency)
         setFromTitle('eur')
         setToTitle('doll')
+        setFromDefaultOption(currency.valueAndText.from[0].text)
+        setToDefaultOption(currency.valueAndText.to[0].text)
         break
       case 'weight':
         setCurrConv(weight)
         setFromTitle('kg')
         setToTitle('lbs')
+        setFromDefaultOption(weight.valueAndText.from[0].text)
+        setToDefaultOption(weight.valueAndText.to[0].text)
         break
       case 'distance':
         setCurrConv(distance)
         setFromTitle('km')
         setToTitle('mi')
+        setFromDefaultOption(distance.valueAndText.from[0].text)
+        setToDefaultOption(distance.valueAndText.to[0].text)
         break
       default:
         setCurrConv(currency)
         setFromTitle('eur')
         setToTitle('doll')
+        setFromDefaultOption(currency.valueAndText.from[0].text)
+        setToDefaultOption(currency.valueAndText.to[0].text)
     }
   }, [currTitle])
 
@@ -51,8 +61,16 @@ function App() {
 
       <div>
         <div className='customSelectTags'>
-          <CustomSelectTag options={currConv.valueAndText.from} selectedValue={setFromTitle} />
-          <CustomSelectTag options={currConv.valueAndText.to} selectedValue={setToTitle} />  
+          <CustomSelectTag options={currConv.valueAndText.from} 
+                           selectedValue={setFromTitle} 
+                           defaultOption={fromDefaultOption}
+                           setDefaultOption={setFromDefaultOption}
+          />
+          <CustomSelectTag options={currConv.valueAndText.to} 
+                           selectedValue={setToTitle}
+                           defaultOption={toDefaultOption} 
+                           setDefaultOption={setToDefaultOption}
+          />  
         </div>
         <UserInput />
         <ConvertButton fromTitle={fromTitle} toTitle={toTitle} currConv={currConv} />

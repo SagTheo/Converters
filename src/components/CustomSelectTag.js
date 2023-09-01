@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import styles from '../css/CustomSelectTag.module.css'
 
-const CustomSelectTag = ({ options, selectedValue }) => {
+const CustomSelectTag = ({ options, selectedValue, defaultOption, setDefaultOption }) => {
   const [displayOptions, setDisplayOptions] = useState(false)
-  const [defaultOption, setDefaultOption] = useState(options[0].text)
 
-  console.log(options)
 
   return (
     <div className={styles.container}>
@@ -15,7 +13,10 @@ const CustomSelectTag = ({ options, selectedValue }) => {
         {
           options.map(option => {
             return (
-              <span onClick={() => setDefaultOption(option.text)}>{option.text}</span>
+              <span onClick={() => {
+                setDefaultOption(option.text)
+                setDisplayOptions(!displayOptions)
+              }}>{option.text}</span>
             )
           })
         }  
