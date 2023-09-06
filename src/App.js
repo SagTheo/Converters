@@ -62,12 +62,12 @@ function App() {
       <div>
         <div className='customSelectTags'>
           <CustomSelectTag options={currConv.valueAndText.from} 
-                           selectedValue={setFromTitle} 
+                           setSelectedValue={setFromTitle}
                            defaultOption={fromDefaultOption}
                            setDefaultOption={setFromDefaultOption}
           />
           <CustomSelectTag options={currConv.valueAndText.to} 
-                           selectedValue={setToTitle}
+                           setSelectedValue={setToTitle}
                            defaultOption={toDefaultOption} 
                            setDefaultOption={setToDefaultOption}
           />  

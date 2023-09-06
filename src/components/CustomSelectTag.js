@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../css/CustomSelectTag.module.css'
 
-const CustomSelectTag = ({ options, selectedValue, defaultOption, setDefaultOption }) => {
+const CustomSelectTag = ({ options, setSelectedValue, defaultOption, setDefaultOption }) => {
   const [displayOptions, setDisplayOptions] = useState(false)
 
 
@@ -16,21 +16,12 @@ const CustomSelectTag = ({ options, selectedValue, defaultOption, setDefaultOpti
               <span onClick={() => {
                 setDefaultOption(option.text)
                 setDisplayOptions(!displayOptions)
+                setSelectedValue(option.value)
               }}>{option.text}</span>
             )
           })
         }  
       </div>
-      
-      {/* <ul className={`${displayOptions ? styles.show : styles.hide} ${styles.ul}`}>
-          {
-              options.map(option => {
-                  return (
-                      <li className={styles.li} onClick={() => selectedValue(option.value)}>{option.text}</li>
-                  )
-              })
-          }
-      </ul> */}
       <svg xmlns="http://www.w3.org/2000/svg" 
            width="16" 
            height="16" 
