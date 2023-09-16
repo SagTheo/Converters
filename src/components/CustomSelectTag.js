@@ -17,7 +17,9 @@ const CustomSelectTag = ({ options, setSelectedValue, defaultOption, setDefaultO
                 setDefaultOption(option.text)
                 setDisplayOptions(!displayOptions)
                 setSelectedValue(option.value)
-              }}>{option.text}</span>
+              }}
+                    className={styles.option}
+              >{option.text}</span>
             )
           })
         }  

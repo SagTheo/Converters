@@ -10,13 +10,6 @@
     height: 19.2px;
 }
 
-.ul {
-    height: 19.2px;
-    margin-block: 0.2rem;
-    list-style-type: none;
-    padding-left: 0;
-}
-
 .show {
     overflow: visible;
     z-index: 1;
@@ -30,6 +23,9 @@
     cursor: pointer ;
 }
 
-.li {
-    background-color: grey;
+.option {
+    cursor: pointer;
+    background-color: rgb(158, 158, 158);
+    padding: 3px;
+    color: white;
 }
