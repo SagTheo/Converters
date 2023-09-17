@@ -55,7 +55,10 @@ function App() {
       {
         converterTypes.map(type => {
           return (
-            <ConverterType key={type.key} title={type.title} changeConverter={setCurrTitle} />
+            <ConverterType key={type.key} 
+                           title={type.title} 
+                           changeConverter={setCurrTitle}
+                           resetUserInput={setUserInput} />
           )
         })
       }
@@ -73,7 +76,7 @@ function App() {
                            setDefaultOption={setToDefaultOption}
           />  
         </div>
-        <UserInput setUserInput={setUserInput} />
+        <UserInput currTitle={currTitle} setUserInput={setUserInput} />
         <ConvertButton fromTitle={fromTitle} 
                        toTitle={toTitle} 
                        currConv={currConv} 
