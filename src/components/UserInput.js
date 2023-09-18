@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import styles from '../css/UserInput.module.css'
 
 const UserInput = ({ currTitle, setUserInput }) => {
-  const [inputValue, setInputValue] = useState()
-
   useEffect(() => {
-    setInputValue('')
+    const userInput = document.getElementById('userInput')
+    userInput.value = ''
   }, [currTitle])
 
   return (
     <div className={styles.userInputContainer}>
-        <textarea className={styles.userInput} 
-                  onChange={e => setUserInput(e.target.value)}
-        >{inputValue}</textarea>
+        <input className={styles.userInput} 
+               id='userInput'
+               onChange={e => setUserInput(e.target.value)}
+        />
         <div className={styles.result}></div>
     </div>
   )
