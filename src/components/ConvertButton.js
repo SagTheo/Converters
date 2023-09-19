@@ -5,9 +5,14 @@ const ConvertButton = ({ fromTitle, toTitle, currConv, userInput }) => {
 
   return (
     <button onClick={() => {
-      console.log(formattedConversion)
-      console.log(currConv.rates[formattedConversion])
-      console.log(userInput)
+      let parsedInput = Number(userInput)
+      const controlInput = parsedInput / 1
+
+      if (controlInput !== parsedInput) {
+        alert('Please enter a valid number')
+      } else {
+        console.log('Converted value : ' + parsedInput * currConv.rates[formattedConversion])
+      }
     }}>
         Convert
     </button>
