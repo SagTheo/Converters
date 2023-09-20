@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ConvertButton = ({ fromTitle, toTitle, currConv, userInput }) => {
+const ConvertButton = ({ fromTitle, toTitle, currConv, userInput, setResult }) => {
   const formattedConversion = `${fromTitle}_${toTitle}`
 
   return (
@@ -11,7 +11,7 @@ const ConvertButton = ({ fromTitle, toTitle, currConv, userInput }) => {
       if (controlInput !== parsedInput) {
         alert('Please enter a valid number')
       } else {
-        console.log('Converted value : ' + parsedInput * currConv.rates[formattedConversion])
+        setResult(parsedInput * currConv.rates[formattedConversion])
       }
     }}>
         Convert

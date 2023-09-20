@@ -17,6 +17,7 @@ function App() {
   const [fromDefaultOption, setFromDefaultOption] = useState()
   const [toDefaultOption, setToDefaultOption] = useState()
   const [userInput, setUserInput] = useState()
+  const [result, setResult] = useState()
 
   useEffect(() => {
     switch (currTitle) {
@@ -58,7 +59,8 @@ function App() {
             <ConverterType key={type.key} 
                            title={type.title} 
                            changeConverter={setCurrTitle}
-                           resetUserInput={setUserInput} />
+                           resetUserInput={setUserInput}
+                           resetResult={setResult} />
           )
         })
       }
@@ -76,11 +78,12 @@ function App() {
                            setDefaultOption={setToDefaultOption}
           />  
         </div>
-        <UserInput currTitle={currTitle} setUserInput={setUserInput} />
+        <UserInput currTitle={currTitle} setUserInput={setUserInput} result={result} />
         <ConvertButton fromTitle={fromTitle} 
                        toTitle={toTitle} 
                        currConv={currConv} 
-                       userInput={userInput} />
+                       userInput={userInput}
+                       setResult={setResult} />
       </div>
     </div>
   );

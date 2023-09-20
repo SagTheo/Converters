@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import styles from '../css/UserInput.module.css'
 
-const UserInput = ({ currTitle, setUserInput }) => {
+const UserInput = ({ currTitle, setUserInput, result }) => {
   useEffect(() => {
     const userInput = document.getElementById('userInput')
     userInput.value = ''
@@ -13,7 +13,7 @@ const UserInput = ({ currTitle, setUserInput }) => {
                id='userInput'
                onChange={e => setUserInput(e.target.value)}
         />
-        <div className={styles.result}></div>
+        <div className={styles.result}>{result}</div>
     </div>
   )
 }
