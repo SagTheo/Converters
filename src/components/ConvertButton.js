@@ -10,8 +10,11 @@ const ConvertButton = ({ fromTitle, toTitle, currConv, userInput, setResult }) =
 
       if (controlInput !== parsedInput) {
         alert('Please enter a valid number')
+      } else if (!Object.hasOwn(currConv.rates, formattedConversion)) {
+        alert('Values can not be the same in both dropdown lists')
       } else {
-        setResult(parsedInput * currConv.rates[formattedConversion])
+        const result = Math.floor((parsedInput * currConv.rates[formattedConversion]) * 100) / 100
+        setResult(result)
       }
     }}>
         Convert

@@ -6,8 +6,13 @@
 
 .userInput, .result {
     width: 150px;
-    height: 80px;
     border-radius: 10px;
     border: 1px solid black;
     padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.userInput {
+    padding-bottom: 70px;
 }
